@@ -1,42 +1,53 @@
 'use strict';
-
-
-
-for(let i=1;i<=7;i++){	
+//________________________Printing # _________________________
+for (let i = 1; i <= 7; i++) {	
     let hash="";
 
-    for(let j=1;j<=i;j++){
+    for (let j=1; j<=i; j++) {
       hash+="#";
     }
+    
       console.log(hash);
-
  }
 
 
+//____________________________FizzBuzz___________________________
 
-
-for(let i=1;i<=100;i++){
-    if(i%3==0 && i%5==0)
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
         console.log("FizzBuzz");
-
-    if(i%3==0)
+    }
+    
+    if (i % 3 == 0) {
         console.log("Fizz");
-    else if(i%5==0)
+    }
+    else if (i % 5 == 0) {
         console.log("Buzz");
-    else 
+    }
+    else {
         console.log(i);
+    }
+    
 }
 
-for(let i=1; i<=8; i++){
+
+//_______________________________Chess Board Pattern___________________
+
+for (let i = 1; i <= 8; i++) {
   let pat = "";
-  if(i%2 == 1){
-    pat+=" ";
+    
+  if (i % 2 == 1) {
+    pat += " ";
   }
-  for(let j=1; j<=4; j++){
+    
+  for (let j = 1; j <= 4; j++) {
     pat += "# ";
   }
+    
   console.log(pat);
 }
+
+//____________________________________________________________
 
 function multiplier(factor) {
   return number => number * factor;
@@ -54,14 +65,14 @@ console.log(twice(5));
 
 //______________________Minimum_____________________
 
-// function min(num1, num2) {
-//   return num1 < num2 ? num1 : num2;
-// }
+function min(num1, num2) {
+  return num1 < num2 ? num1 : num2;
+}
 
-// console.log(min(0, 10));
-// // → 0
-// console.log(min(0, -10));
-// // → -10
+console.log(min(0, 10));
+// → 0
+console.log(min(0, -10));
+// → -10
 
 
 
@@ -70,53 +81,53 @@ console.log(twice(5));
 
 //Recursion
 
-// function isEven(n) {
-//   if (n === 0) {
-//     return true;
-//   }
-//   else if (n === 1) {
-//     return false;
-//   }
-//   else {
-//     return isEven(n-2);
-//   }
-// }
+function isEven(n) {
+  if (n === 0) {
+    return true;
+  }
+  else if (n === 1) {
+    return false;
+  }
+  else {
+    return isEven(n-2);
+  }
+}
 
-// console.log(isEven(50));
-// // → true
-// console.log(isEven(75));
-// // → false
-// console.log(isEven(-1));
-// // → ??
+console.log(isEven(50));
+// → true
+console.log(isEven(75));
+// → false
+console.log(isEven(-1));
+// → ??
 
 
 
 // _______________________BEAN COUNTING____________________________-
 
-// function countBs(s) {
-//   let count = 0;
-//   for ( let i = 0; i < s.length; i++) {
-//     if (s[i] == "B") {
-//       count++;
-//     }
-//   }
-//   return count;
-// }
+function countBs(s) {
+  let count = 0;
+  for ( let i = 0; i < s.length; i++) {
+    if (s[i] == "B") {
+      count++;
+    }
+  }
+  return count;
+}
 
-// function countChar(s, char) {
-//   let count = 0;
-//   for (let i = 0; i < s.length; i++) {
-//     if (s[i] == char) {
-//       count++;
-//     }
-//   }
-//   return count;
-// }
+function countChar(s, char) {
+  let count = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] == char) {
+      count++;
+    }
+  }
+  return count;
+}
 
-// console.log(countBs("BBC"));
-// // → 2
-// console.log(countChar("kakkerlak", "k"));
-// // → 4
+console.log(countBs("BBC"));
+// → 2
+console.log(countChar("kakkerlak", "k"));
+// → 4
 
 
 
@@ -124,78 +135,78 @@ console.log(twice(5));
 //_______________________________________________JavaScript Exercise
 //__________________________________________Right Justify_________________________________________
 
-// let rightJustify = function(s) {
-//    s = String(s);
+let rightJustify = function(s) {
+   s = String(s);
 
-//   while (s.length < 70) {
-//     s = " " + s;
-//   }
+  while (s.length < 70) {
+    s = " " + s;
+  }
 
-//   return s;
-// };
+  return s;
+};
 
-// console.log( rightJustify('monty') );
+console.log( rightJustify('monty') );
 
 
 
 //_________________-Fermat’s Last Theorem__________________________________
 
-// function checkFermat(a, b, c, n) {
-//   function power(base, exp) {
-//     if (exp == 0) {
-//       return 1;
-//     }
-//     else{
-//       return base * power(base, exp - 1);
-//     }
-//   }
+function checkFermat(a, b, c, n) {
+  function power(base, exp) {
+    if (exp == 0) {
+      return 1;
+    }
+    else{
+      return base * power(base, exp - 1);
+    }
+  }
 
-//   if ( power(a, n) + power(b, n) == power(c, n) ) {
-//     console.log("Holy smokes, Fermat was wrong!");
-//   }
-//   else {
-//     console.log("No, that doesn’t work.");
-//   }
+  if ( power(a, n) + power(b, n) == power(c, n) ) {
+    console.log("Holy smokes, Fermat was wrong!");
+  }
+  else {
+    console.log("No, that doesn’t work.");
+  }
 
-// }
+}
 
-// checkFermat(2,3,5,2);
+checkFermat(2,3,5,2);
 
 
 
 //___________________________99 bottles of water on the wall______________________
 
-// let waterBottelSong = function(n) {
-//   while (n>0) {
-//     firstLine(n);
-//     secondLine(n);
-//     thirdAndFourthLine(n);
-//     n--;
-//   }
+let waterBottelSong = function(n) {
+  while (n>0) {
+    firstLine(n);
+    secondLine(n);
+    thirdAndFourthLine(n);
+    n--;
+  }
 
-//   if (n == 0) {
-//     console.log("No bottles of water on the wall,");
-//     console.log("no bottles of water,");
-//     console.log("ya’ can’t take one down, ya’ can’t pass it around,"); 
-//     console.log("’cause there are no more bottles of water on the wall!");
-//   }
+  if (n == 0) {
+    console.log("No bottles of water on the wall,");
+    console.log("no bottles of water,");
+    console.log("ya’ can’t take one down, ya’ can’t pass it around,"); 
+    console.log("’cause there are no more bottles of water on the wall!");
+  }
 
-//   function firstLine(n) {
-//     console.log(n+" bottles of water on the wall,");
-//   }
+  function firstLine(n) {
+    console.log(n+" bottles of water on the wall,");
+  }
 
-//   function secondLine(n) {
-//     console.log(n+" bottles of water,");
-//   }
+  function secondLine(n) {
+    console.log(n+" bottles of water,");
+  }
 
-//   function thirdAndFourthLine(n) {
-//     console.log("ya’ take one down, ya’ pass it around,");
-//     console.log((n-1)+" bottles of water on the wall.\n")
-//   }
+  function thirdAndFourthLine(n) {
+    console.log("ya’ take one down, ya’ pass it around,");
+    console.log((n-1)+" bottles of water on the wall.\n")
+  }
 
-// };
+};
 
-//waterBottelSong(99);
+waterBottelSong(99);
 
 
 //_______________________________________________________recursive function named oddSum_____________________________
